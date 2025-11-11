@@ -1,0 +1,100 @@
+/* RESET DASAR */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: Arial, sans-serif; /* Ganti dengan font yang Anda suka */
+}
+
+/* GAYA BACKGROUND UTAMA (Sesuai keinginan Anda) */
+body {
+    color: #eee;
+    margin: 0;
+    /* Kombinasi Grid dan Gradien Gelap */
+    background-image:
+        repeating-linear-gradient(
+            to right, #2d2a44 0 1px, transparent 2px 200px
+        ),
+        repeating-linear-gradient(
+            to bottom, #2d2a44 0 1px, transparent 2px 200px
+        ),
+        radial-gradient(
+            at 50% 50%, #2d2a44, #1d1b34
+        );
+}
+
+/* HEADER DAN NAVIGASI */
+header {
+    width: min(1200px, 90vw);
+    margin: auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Pindahkan navigasi ke kanan */
+}
+
+header nav ul {
+    display: flex;
+    gap: 30px;
+    opacity: 0.8;
+}
+
+/* BAGIAN BANNER/UTAMA */
+.banner {
+    height: 90vh; /* Mengisi sisa tinggi layar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    position: relative; /* Penting untuk canvas */
+    overflow: hidden;
+}
+
+/* CANVAS DOTS (Lapisan paling belakang) */
+#dotsCanvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Agar tidak menghalangi klik pada elemen lain */
+    z-index: 1; 
+}
+
+/* JUDUL KREATIF (Aksen Gradien) */
+.creative-title {
+    font-size: 3em;
+    font-weight: bold;
+    z-index: 2; /* Di atas canvas */
+    /* Efek Teks Gradien Pelangi */
+    background-image: linear-gradient(
+        to right, #89a5df, #e46e7f, #e8e191
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2em;
+}
+
+/* TOMBOL CTA (Call-to-Action) */
+.cta-button {
+    all: unset;
+    border: 1px solid #afaeae55;
+    padding: 10px 25px;
+    border-radius: 25px;
+    background-image: linear-gradient(
+        to bottom, #eee1, transparent, #eee1
+    );
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 2; /* Di atas canvas */
+}
+
+.cta-button:hover {
+    background-color: #c691e6; /* Warna Aksen Ungu */
+    color: #040018;
+    box-shadow: 0 0 50px #c691e6;
+    transform: translateY(-2px);
+}
